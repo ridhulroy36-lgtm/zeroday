@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff9f7" />
+    <title>The Button</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <p class="eyebrow">THE MOST IMPORTANT THING YOU'LL DO TODAY</p>
+        <h1>THE BUTTON</h1>
+        <p class="tagline">A beautifully pointless competition.</p>
+      </header>
+
+      <section class="stats" aria-label="Press statistics">
+        <article class="stat-card">
+          <p>YOUR PRESSES</p>
+          <strong id="personal-count">0</strong>
+        </article>
+        <article class="stat-card">
+          <p>GLOBAL PRESSES</p>
+          <strong id="global-count">0</strong>
+        </article>
+      </section>
+
+      <button id="press-button" type="button" disabled aria-label="Press the button">
+        <span>PRESS</span><span>ME</span>
+      </button>
+      <p id="connection-message" class="connection-message">Connecting to the button…</p>
+
+      <section class="leaderboard" aria-labelledby="leaderboard-title">
+        <div class="leaderboard-heading">
+          <h2 id="leaderboard-title">LIVE LEADERBOARD</h2>
+          <span class="live-dot">LIVE</span>
+        </div>
+        <div id="leader-list" class="leader-list" aria-live="polite">
+          <p class="empty-state">Waiting for the first press…</p>
+        </div>
+      </section>
+    </main>
+    <dialog id="name-dialog" aria-labelledby="name-title">
+      <form id="name-form" method="dialog">
+        <p class="dialog-kicker">MELCOW</p>
+        <h2 id="name-title">നീ ഏതാ ഹമുക്കേ?</h2>
+        <p>Choose a name for the live leaderboard.</p>
+        <label for="player-name">YOUR NAME</label>
+        <input id="player-name" name="player-name" type="text" minlength="2" maxlength="20" autocomplete="nickname" placeholder="eg: KUMPIDI" required />
+        <button type="submit">സവാരി ഗിരി ഗിരി</button>
+      </form>
+    </dialog>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

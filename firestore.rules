@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read: if true;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update: if request.auth != null && request.auth.uid == userId
+        && request.resource.data.name == resource.data.name
+        && request.resource.data.presses == resource.data.presses + 1;
+      allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+    // Prototype rule only. Use a Cloud Function before a public competition.
+    match /stats/global {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}
