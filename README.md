@@ -24,3 +24,4 @@ The included Firestore rules are usable for a demo. They do not make a public le
 ## Player cleanup
 
 Visitors must enter a name before they can press the button. Their player document is removed when they leave the page, while `stats/global` is retained. Browser close events are best-effort: for guaranteed deletion after a browser crash or sudden loss of connection, add Firebase Realtime Database presence (`onDisconnect`) plus a Cloud Function to remove the corresponding Firestore document.
+contributer saalim
